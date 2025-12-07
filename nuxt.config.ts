@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseUrl: '/garden/'
+    baseURL: '/garden/'
   },
 
   modules: [
