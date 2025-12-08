@@ -1,5 +1,5 @@
 <template>
-  <pre v-if="page">{{ page.meta.date }}</pre>
+  <PageHeader v-if="page" :page="page" />
   <ContentRenderer v-if="page" :value="page" />
   <div v-else>page not found</div>
 </template>
