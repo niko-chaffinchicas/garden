@@ -1,5 +1,6 @@
 ---
-date: 2025-12-01
+createdAt: 2025-12-01
+updatedAt: 2025-12-08
 ---
 
 # Learning to Garden

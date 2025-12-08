@@ -1,5 +1,5 @@
 ---
-date: 2025-11-21
+createdAt: 2025-11-21
 ---
 
 # Garden Gate 🪴
