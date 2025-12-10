@@ -1,8 +1,8 @@
 <template>
   <nav>
     <ul>
-      <li v-for="link of navigation" :key="link.path">
-        <a :href="getLinkPath(link.path)">{{ link.title }}</a>
+      <li v-for="link of navLinks" :key="link.path">
+        <a :href="link.path">{{ link.title }}</a>
       </li>
     </ul>
   </nav>
@@ -13,4 +13,15 @@
 const { data: navigation } = await useAsyncData(() =>
   queryCollectionNavigation("content")
 );
+
+const navLinks = computed(() => {
+  return (navigation.value || []).map((link) => ({
+    ...link,
+    path: getLinkPath(link.path),
+  }));
+});
+
+for (const link of navLinks.value) {
+  prerenderRoutes(link.path);
+}
 </script>
