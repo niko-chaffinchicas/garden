@@ -6,14 +6,10 @@
 
 <script setup lang="ts">
 const route = useRoute();
-console.log(route.path);
-console.log(route.path.replace("/garden", ""));
-const { data: page } = await useAsyncData(() =>
-  queryCollection("content").path(route.path).first()
-);
+const page = await queryCollection("content").path(route.path).first();
 
 useSeoMeta({
-  title: page.value?.title,
-  description: page.value?.description,
+  title: page?.title,
+  description: page?.description,
 });
 </script>
