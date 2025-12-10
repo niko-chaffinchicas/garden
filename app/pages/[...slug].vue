@@ -6,6 +6,8 @@
 
 <script setup lang="ts">
 const route = useRoute();
+console.log(route.path);
+console.log(route.path.replace("/garden", ""));
 const { data: page } = await useAsyncData(() =>
   queryCollection("content").path(route.path).first()
 );
