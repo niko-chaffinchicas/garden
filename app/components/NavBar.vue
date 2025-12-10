@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="link of navigation" :key="link.path">
-        <NuxtLink :to="link.path">{{ link.title }}</NuxtLink>
+        <a :href="link.path">{{ link.title }}</a>
       </li>
     </ul>
   </nav>
