@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+# Niko's Digital Garden
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a space for me to do as I please. Expect half-baked projects, partially formed thoughts, and potentially broken code.
 
 ## Setup
 
