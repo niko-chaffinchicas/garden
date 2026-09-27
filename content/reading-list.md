@@ -1,5 +1,6 @@
 ---
 createdAt: 2026-09-26
+updatedAt: 2026-09-26
 ---
 
 # Reading List
@@ -13,6 +14,7 @@ createdAt: 2026-09-26
 ## Want to Read
 
 - "Iron Flame", Rebecca Yarros
+- "The Will to Change", bell hooks
 - "To Hell with the Hustle", Jefferson Bethke
 
 ## Finished Reading
