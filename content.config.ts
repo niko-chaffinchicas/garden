@@ -9,7 +9,17 @@ export default defineContentConfig({
             schema: z.object({
                 createdAt: z.date().describe('The date the post was created'),
                 updatedAt: z.date().optional().describe('The date the post was last updated'),
-                stage: z.number().optional().describe('The stage of the post, expressed an integer').default(0),
+                stage: z.number().default(0).describe('The stage of the post, expressed an integer'),
+            }),
+        }),
+        book: defineCollection({
+            type: 'data',
+            source: 'books/*.md',
+            schema: z.object({
+                createdAt: z.date(),
+                updatedAt: z.date().optional(),
+                order: z.integer().default(0),
+                readingStatus: z.enum(['finished_reading', 'started_reading', 'want_to_read'])
             }),
         }),
     },
