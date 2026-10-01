@@ -2,7 +2,6 @@
   <nav>
     <ul>
       <li v-for="link of navLinks" :key="link.path">
-        {{ link }} |
         <a :href="link.path">{{ link.title }}</a>
       </li>
     </ul>
@@ -17,10 +16,17 @@ const { data: navigation } = await useAsyncData(() =>
 
 const navLinks = computed(() => {
   return (navigation.value || [])
-    .filter((link) => link.path !== '/books/')
+    // filter down to links to stems/groups
+    .filter((link) => link.stem)
     .map((link) => ({
       ...link,
       path: getLinkPath(link.path),
+    })
+    // put the index link first, then sort alpha after that
+    .sort((a, b) => {
+      if (a.stem === 'index' || a > b) { return -1; }
+      if (b.stem === 'index' || b > a) { return 1; }
+      return 0;
     }),
   );
 });
