@@ -2,6 +2,7 @@
   <nav>
     <ul>
       <li v-for="link of navLinks" :key="link.path">
+        {{ link }} |
         <a :href="link.path">{{ link.title }}</a>
       </li>
     </ul>
