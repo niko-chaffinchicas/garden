@@ -1,17 +1,15 @@
 <template>
-  <template v-if="page">
-    <PageHeader :page="page" />
-    <ContentRenderer :value="page" />
-  </template>
+  <ContentPage v-if="page" :page="page" />
   <div v-else>
-    page not found for {{ route.path }}<br>
-    did you mean to query for {{ route.path.split('/').pop() }}?
+    page not found for {{ route.path }}<br />
+    did you mean to query for {{ route.path.split("/").pop() }}?
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
-const page = await queryCollection("content").path(route.path).first();
+const collection = route.path.startsWith("/books/") ? "book" : "content";
+const page = await queryCollection(collection).path(route.path).first();
 
 useSeoMeta({
   title: page?.title,

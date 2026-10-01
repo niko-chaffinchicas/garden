@@ -16,7 +16,7 @@ export default defineContentConfig({
             }),
         }),
         book: defineCollection({
-            type: 'data',
+            type: 'page',
             source: 'books/**',
             schema: z.object({
                 createdAt: z.date(),
