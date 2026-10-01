@@ -1,7 +1,12 @@
 <template>
-  <PageHeader v-if="page" :page="page" />
-  <ContentRenderer v-if="page" :value="page" />
-  <div v-else>page not found</div>
+  <template v-if="page">
+    <PageHeader :page="page" />
+    <ContentRenderer :value="page" />
+  </template>
+  <div v-else>
+    page not found for {{ route.path }}<br>
+    did you mean to query for {{ route.path.split('/').pop() }}?
+  </div>
 </template>
 
 <script setup lang="ts">
