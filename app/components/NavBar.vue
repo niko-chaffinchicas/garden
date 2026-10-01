@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="link of navLinks" :key="link.path">
-        <a :href="link.path">{{ link.title }}</a>
+        <a :href="link.path">{{ link.title }}</a> ({{ link.stem }})
       </li>
     </ul>
   </nav>
