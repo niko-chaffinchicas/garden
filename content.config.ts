@@ -7,7 +7,7 @@ export default defineContentConfig({
             type: 'page',
             source: {
                 include: '**',
-                exclude: ['books/**],
+                exclude: ['books/**'],
             },
             schema: z.object({
                 createdAt: z.date().describe('The date the post was created'),
