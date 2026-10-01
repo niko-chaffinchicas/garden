@@ -1,5 +1,8 @@
 <template>
-  <ContentPage v-if="page" :page="page" />
+  <template v-if="page">
+    <IndexPage v-if="route.path === '/'" :page="page"></IndexPage>
+    <ContentPage v-else :page="page" />
+  </template>
   <div v-else>
     page not found for {{ route.path }}<br />
     did you mean to query for {{ route.path.split("/").pop() }}?
@@ -7,6 +10,8 @@
 </template>
 
 <script setup lang="ts">
+import IndexPage from "~/components/IndexPage.vue";
+
 const route = useRoute();
 const collection = route.path.startsWith("/books/") ? "book" : "content";
 const page = await queryCollection(collection).path(route.path).first();
