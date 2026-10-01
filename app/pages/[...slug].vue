@@ -1,6 +1,7 @@
 <template>
   <template v-if="page">
     <IndexPage v-if="route.path === '/'" :page="page"></IndexPage>
+    <BooksPage v-if="route.path === '/books/'" :page="page"></BooksPage>
     <ContentPage v-else :page="page" />
   </template>
   <div v-else>

@@ -22,6 +22,7 @@ export default defineContentConfig({
                 createdAt: z.date(),
                 updatedAt: z.date().optional(),
                 title: z.string(),
+                author: z.string(),
                 order: z.number().default(0),
                 readingStatus: z.enum(['finished_reading', 'started_reading', 'want_to_read']).default('want_to_read')
             }),

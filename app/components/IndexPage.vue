@@ -5,7 +5,7 @@
 
   <h2>Recently Created Pages</h2>
   <ul>
-    <li v-for="page in recentlyCreated">
+    <li v-for="page in recentlyCreated" :key="page.path">
       <a :href="page.path">
         {{ page.title }}<br />
         <small>{{ format(new Date(page.createdAt), "MMM d, yyyy") }}</small>
@@ -15,7 +15,7 @@
 
   <h2>Recently Updated Pages</h2>
   <ul>
-    <li v-for="page in recentlyUpdated">
+    <li v-for="page in recentlyUpdated" :key="page.path">
       <a :href="page.path">
         {{ page.title }}<br />
         <small>
