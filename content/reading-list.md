@@ -5,6 +5,8 @@ updatedAt: 2026-09-26
 
 # Reading List
 
+<!-- TODO: migrate each of these over to items in the "CMS" -->
+
 ## Currently Reading
 
 - "Fourth Wing", Rebecca Yarros
@@ -28,4 +30,3 @@ updatedAt: 2026-09-26
 - "Remakably Bright Creatures", Shelby Van Pelt
 - "A Prayer for the Crown-Shy", Becky Chambers
 - "The Light Eaters", Zoë Schlanger
-- "A Psalm for the Wild-Built", Becky Chambers
