@@ -15,10 +15,13 @@ const { data: navigation } = await useAsyncData(() =>
 );
 
 const navLinks = computed(() => {
-  return (navigation.value || []).map((link) => ({
-    ...link,
-    path: getLinkPath(link.path),
-  }));
+  return (navigation.value || [])
+    .filter((link) => link.path !== '/books/')
+    .map((link) => ({
+      ...link,
+      path: getLinkPath(link.path),
+    }),
+  );
 });
 
 for (const link of navLinks.value) {
