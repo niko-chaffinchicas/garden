@@ -5,7 +5,10 @@ export default defineContentConfig({
     collections: {
         content: defineCollection({
             type: 'page',
-            source: '**/*.md',
+            source: {
+                include: '**',
+                exclude: ['books/**],
+            },
             schema: z.object({
                 createdAt: z.date().describe('The date the post was created'),
                 updatedAt: z.date().optional().describe('The date the post was last updated'),
@@ -14,7 +17,7 @@ export default defineContentConfig({
         }),
         book: defineCollection({
             type: 'data',
-            source: 'books/*.md',
+            source: 'books/**',
             schema: z.object({
                 createdAt: z.date(),
                 updatedAt: z.date().optional(),
