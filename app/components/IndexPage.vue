@@ -6,7 +6,7 @@
   <h2>Recently Created Pages</h2>
   <ul>
     <li v-for="page in recentlyCreated" :key="page.path">
-      <a :href="page.path">
+      <a :href="getLinkPath(page.path)">
         {{ page.title }}<br />
         <small>{{ format(new Date(page.createdAt), "MMM d, yyyy") }}</small>
       </a>
@@ -16,7 +16,7 @@
   <h2>Recently Updated Pages</h2>
   <ul>
     <li v-for="page in recentlyUpdated" :key="page.path">
-      <a :href="page.path">
+      <a :href="getLinkPath(page.path)">
         {{ page.title }}<br />
         <small>
           updated: {{ format(new Date(page.updatedAt!), "MMM d, yyyy") }}
@@ -36,10 +36,12 @@ defineProps<{
 
 const recentlyCreated = await queryCollection("content")
   .order("createdAt", "DESC")
+  .where("archived", "=", false)
   .limit(4)
   .all();
 const recentlyUpdated = await queryCollection("content")
   .where("updatedAt", "IS NOT NULL")
+  .where("archived", "=", false)
   .order("updatedAt", "DESC")
   .limit(4)
   .all();
