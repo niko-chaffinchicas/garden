@@ -1,6 +1,6 @@
 ---
-createdAt: 2026-09-30
-title: A Psalm for the Wild-Built
+createdAt: 2026-10-01
+title: A Prayer for the Crown-Shy
 author: Becky Chambers
 readingStatus: finished_reading
 ---

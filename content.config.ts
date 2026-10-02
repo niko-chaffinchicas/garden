@@ -13,6 +13,7 @@ export default defineContentConfig({
                 createdAt: z.date().describe('The date the post was created'),
                 updatedAt: z.date().optional().describe('The date the post was last updated'),
                 stage: z.number().default(0).describe('The stage of the post, expressed an integer'),
+                archived: z.boolean().default(false)
             }),
         }),
         book: defineCollection({
