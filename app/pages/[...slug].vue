@@ -23,10 +23,14 @@ if (route.path === "/books/") {
   });
 } else {
   const collection = route.path.startsWith("/books/") ? "book" : "content";
-  page = await queryCollection(collection)
-    .path(route.path)
-    .where("archived", "=", false)
-    .first();
+  if (collection === "content") {
+    page = await queryCollection(collection)
+      .path(route.path)
+      .where("archived", "=", false)
+      .first();
+  } else {
+    page = await queryCollection(collection).path(route.path).first();
+  }
 
   useSeoMeta({
     title: page?.title,
