@@ -2,9 +2,9 @@
   <h1>Books</h1>
 
   <template v-for="list in lists" :key="list.title">
-    <h2>Want to Read</h2>
+    <h2>{{ list.title }}</h2>
     <ul>
-      <li v-for="book in wantToRead" :key="book.path">
+      <li v-for="book in list.books" :key="book.path">
         <a :href="book.path">
           {{ book.title }}
           <span v-if="book.author">by {{ book.author }}</span>
