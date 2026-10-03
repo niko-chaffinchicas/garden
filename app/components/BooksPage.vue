@@ -1,15 +1,19 @@
 <template>
   <h1>Books</h1>
 
-  <h2>Want to Read</h2>
-  <ul>
-    <li v-for="book in wantToRead" :key="book.path">
-      <a :href="book.path">
-        {{ book.title }}
-        <span v-if="book.author">by {{ book.author }}</span>
-      </a>
-    </li>
-  </ul>
+  <template v-for="list in lists" :key="list.title">
+    <h2>Want to Read</h2>
+    <ul>
+      <li v-for="book in wantToRead" :key="book.path">
+        <a :href="book.path">
+          {{ book.title }}
+          <span v-if="book.author">by {{ book.author }}</span>
+        </a>
+      </li>
+    </ul>
+  </template>
+
+  <!--
 
   <h2>Currently Reading</h2>
   <ul>
@@ -30,6 +34,7 @@
       </a>
     </li>
   </ul>
+  -->
 </template>
 
 <script setup lang="ts">
@@ -44,4 +49,10 @@ const startedReading = books.filter(
 const finishedReading = books.filter(
   (book) => book.readingStatus === "finished_reading",
 );
+
+const lists = [
+  { title: 'Want to Read', books: wantToRead },
+  { title: 'Currently Reading', books: startedReading },
+  { title: 'Finished Reading', books: finishedReading },
+];
 </script>
