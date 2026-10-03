@@ -51,8 +51,8 @@ const finishedReading = books.filter(
 );
 
 const lists = [
-  { title: 'Want to Read', books: wantToRead },
   { title: 'Currently Reading', books: startedReading },
+  { title: 'Want to Read', books: wantToRead },
   { title: 'Finished Reading', books: finishedReading },
 ];
 </script>
