@@ -1,7 +1,7 @@
 <template>
   <h1>Books</h1>
 
-  <template v-for="list in lists" :key="list.title">
+  <div v-for="list in lists" :key="list.title">
     <h2>{{ list.title }}</h2>
     <ul>
       <li v-for="book in list.books" :key="book.path">
@@ -11,34 +11,11 @@
         </a>
       </li>
     </ul>
-  </template>
-
-  <!--
-
-  <h2>Currently Reading</h2>
-  <ul>
-    <li v-for="book in startedReading" :key="book.path">
-      <a :href="book.path">
-        {{ book.title }}
-        <span v-if="book.author">by {{ book.author }}</span>
-      </a>
-    </li>
-  </ul>
-
-  <h2>Finished Reading</h2>
-  <ul>
-    <li v-for="book in finishedReading" :key="book.path">
-      <a :href="book.path">
-        {{ book.title }}
-        <span v-if="book.author">by {{ book.author }}</span>
-      </a>
-    </li>
-  </ul>
-  -->
+  </div>
 </template>
 
 <script setup lang="ts">
-const books = await queryCollection("book").all();
+const books = await queryCollection("book").order('order').all();
 
 const wantToRead = books.filter(
   (book) => book.readingStatus === "want_to_read",
