@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const books = await queryCollection("book").order('order').all();
+const books = await queryCollection("book").order("order", "ASC").all();
 
 const wantToRead = books.filter(
   (book) => book.readingStatus === "want_to_read",
@@ -28,8 +28,8 @@ const finishedReading = books.filter(
 );
 
 const lists = [
-  { title: 'Currently Reading', books: startedReading },
-  { title: 'Want to Read', books: wantToRead },
-  { title: 'Finished Reading', books: finishedReading },
+  { title: "Currently Reading", books: startedReading },
+  { title: "Want to Read", books: wantToRead },
+  { title: "Finished Reading", books: finishedReading },
 ];
 </script>
