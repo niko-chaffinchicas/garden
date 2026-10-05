@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const books = await queryCollection("book").order("order", "ASC").all();
+const books = await queryCollection("book").order("order", "DESC").all();
 
 const wantToRead = books.filter(
   (book) => book.readingStatus === "want_to_read",
