@@ -35,7 +35,16 @@ h1,
 h2,
 h3 {
   /* font-family: "Montserrat", sans-serif; */
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }
 
 h1,
@@ -45,5 +54,4 @@ h4,
 h5,
 h6 {
   color: #555;
-  font-weight: 600;
 }
