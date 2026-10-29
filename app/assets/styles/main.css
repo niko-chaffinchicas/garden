@@ -39,6 +39,8 @@ h3 {
   font-weight: 400;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: none;
+  font-kerning: normal;
+  line-height: 1.25;
 }
 
 h4,
