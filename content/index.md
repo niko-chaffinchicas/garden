@@ -1,9 +1,9 @@
 ---
 createdAt: 2025-11-21
-updatedAt: 2026-09-25
+updatedAt: 2026-10-29
 ---
 
-# Garden Gate 🪴
+# Garden Gate
 
 This digital garden is a space for me to do as I please. Expect half-baked projects, partially formed thoughts, and potentially broken code. The main idea being pursued here is _play_, compiled and deployed in a place that is not private, not publicized—just shared. Typos and all.
 
